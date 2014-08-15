@@ -2,17 +2,16 @@ package com.gellesteus.rpg.screen;
 
 import com.badlogic.gdx.Screen;
 import com.gellesteus.rpg.scene.Scene;
-import com.gellesteus.rpg.scene.SceneRenderer;
+import com.gellesteus.rpg.entity.Character;
 
 public class Gameplay implements Screen {
 	public static Gameplay gameplay = new Gameplay();
 	private Scene current;
-	private SceneRenderer sRender;
-	
+	private Character activeCharacter;
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
-		sRender.render();
+		current.Render();
 	}
 
 	@Override
@@ -53,7 +52,7 @@ public class Gameplay implements Screen {
 
 	public void changeScene(Scene newScene){
 		current=newScene;
-		sRender=new SceneRenderer(current);
+		current.Render();
 	}
 	
 	public void showMessgae(String message){

@@ -14,7 +14,6 @@ public class StatCondition implements Conditional {
 	
 	@Override
 	public boolean evaluate(Character actor) {
-		// TODO Auto-generated method stub
 		return actor.getAVB(aType)>=amount;
 	}
 

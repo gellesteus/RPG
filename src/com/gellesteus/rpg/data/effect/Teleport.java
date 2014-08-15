@@ -11,12 +11,12 @@ public class Teleport implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		actor.SetPosition(target);
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 
 	}
 

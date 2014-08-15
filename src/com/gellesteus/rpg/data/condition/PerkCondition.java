@@ -12,7 +12,6 @@ public class PerkCondition implements Conditional {
 	
 	@Override
 	public boolean evaluate(Character actor) {
-		// TODO Auto-generated method stub
 		return actor.hasPerk(perk);
 	}
 

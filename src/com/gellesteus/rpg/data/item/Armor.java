@@ -8,7 +8,6 @@ public class Armor extends Item {
 	@Override
 	public void onEquip(Person actor) {
 		// TODO Auto-generated method stub
-
 	}
 
 }

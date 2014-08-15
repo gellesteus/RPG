@@ -10,12 +10,12 @@ public class DisallowAction implements Effect {
 		this.action=action;
 	}
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		actor.disallowAction(action);
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		// TODO fix effect overwriting
 		actor.allowAction(action);
 	}

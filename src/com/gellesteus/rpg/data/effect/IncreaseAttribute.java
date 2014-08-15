@@ -13,13 +13,13 @@ public class IncreaseAttribute implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		// TODO Auto-generated method stub
 		actor.modAV(aType, amount);
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		// TODO Auto-generated method stub	
 		actor.modAV(aType, -amount);
 	}

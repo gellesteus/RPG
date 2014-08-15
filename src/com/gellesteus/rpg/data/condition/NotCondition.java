@@ -11,7 +11,6 @@ public class NotCondition implements Conditional {
 	
 	@Override
 	public boolean evaluate(Character actor) {
-		// TODO Auto-generated method stub
 		return !(condition.evaluate(actor));
 	}
 

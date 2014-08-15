@@ -12,7 +12,7 @@ public class RemovePassive implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		hadPassive=actor.hasPassive(passive);
 		if(hadPassive){
 			actor.removePassive(passive);
@@ -20,7 +20,7 @@ public class RemovePassive implements Effect {
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		if(hadPassive){
 			actor.addPassive(passive);
 		}

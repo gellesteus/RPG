@@ -15,16 +15,13 @@ public class Damage implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
-		// TODO Auto-generated method stub
+	public void Apply(Character actor,Character caster) {
+		
 		caster.damage(actor, amount, dType);
 	}
 
 	@Override
-	public void Remove(Character actor) {
-		// TODO Auto-generated method stub
-
-	}
+	public void Remove(Character actor,Character caster) {}
 
 	@Override
 	public boolean repeatApplication() {

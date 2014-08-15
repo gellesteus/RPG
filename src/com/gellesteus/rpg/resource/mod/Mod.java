@@ -5,6 +5,12 @@ import java.util.ArrayList;
 
 import com.gellesteus.rpg.ai.Routine;
 import com.gellesteus.rpg.data.ability.Ability;
+import com.gellesteus.rpg.data.item.Armor;
+import com.gellesteus.rpg.data.item.Consumable;
+import com.gellesteus.rpg.data.item.Leveled;
+import com.gellesteus.rpg.data.item.Misc;
+import com.gellesteus.rpg.data.item.Weapon;
+import com.gellesteus.rpg.data.perk.Perk;
 import com.gellesteus.rpg.entity.Monster;
 import com.gellesteus.rpg.entity.Person;
 import com.gellesteus.rpg.resource.model.Model;
@@ -12,7 +18,7 @@ import com.gellesteus.rpg.resource.script.Script;
 import com.gellesteus.rpg.resource.sound.Sound;
 import com.gellesteus.rpg.resource.texture.Texture;
 import com.gellesteus.rpg.scene.Scene;
-import com.thoughtworks.xstream.annotations.XStreamInclude;
+import com.thoughtworks.xstream.XStream;
 
 public class Mod {
 /* A mod is a collection of models, textures, sounds, scripts, abilties, characters, items and other game data
@@ -68,8 +74,23 @@ public class Mod {
 	private int priority;
 	private ArrayList<Mod> dependencies = new ArrayList<Mod>();
 	
-	
 	private boolean ignore;
+	
+	private static XStream xstream = new XStream();
+	
+	static{
+		xstream.alias("Mod", Mod.class);
+		xstream.alias("Monster",Monster.class);
+		xstream.alias("NPC",Person.class);
+		xstream.alias("Scene",Scene.class);
+		xstream.alias("AIRoutine", Routine.class);
+		xstream.alias("Consumable",Consumable.class);
+		xstream.alias("Armor",Armor.class);
+		xstream.alias("Weapon", Weapon.class);
+		xstream.alias("MiscItem",Misc.class);
+		xstream.alias("LeveledItem",Leveled.class);
+		xstream.alias("Perk",Perk.class);
+	}
 	
 	public Mod(File filePath){
 		this.filePath=filePath;

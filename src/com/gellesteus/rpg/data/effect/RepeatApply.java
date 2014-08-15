@@ -11,13 +11,13 @@ public class RepeatApply implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		actor.addEffect(effect, 5.0f);
 		//TODO: find duration
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 	}
 
 	@Override

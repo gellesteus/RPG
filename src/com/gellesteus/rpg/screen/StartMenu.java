@@ -1,13 +1,15 @@
 package com.gellesteus.rpg.screen;
 
 import com.badlogic.gdx.Screen;
+import com.gellesteus.rpg.ui.game.Overlay;
 
 public class StartMenu implements Screen {
-
+	private Overlay overlay=new Overlay();
+	
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
-		com.gellesteus.rpg.ui.start.StartMenu.Render();
+		overlay.draw();
 	}
 
 	@Override

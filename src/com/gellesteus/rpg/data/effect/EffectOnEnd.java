@@ -12,12 +12,12 @@ public class EffectOnEnd implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		actor.addEffect(effect, duration);
 	}
 

@@ -13,13 +13,13 @@ public class SetAttribute implements Effect {
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		origValue=actor.getAVB(aType);
 		actor.setAVB(aType, newValue);
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		//fix overwrite problem
 		actor.setAVB(aType, origValue);
 	}

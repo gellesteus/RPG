@@ -5,25 +5,28 @@ import com.gellesteus.rpg.entity.Character;
 
 public class AddAbility implements Effect {
 	private Ability ability;
+	private boolean hasAbility=false;
 	public AddAbility(Ability ab){
 		this.ability=ab;
 	}
 	
 	@Override
-	public void Apply(Character actor) {
-		// TODO Auto-generated method stub
-		actor.AddAbility(ability);
+	public void Apply(Character actor,Character caste) {
+		if(actor.hasAbility(ability)){	
+			hasAbility=true;
+			actor.AddAbility(ability);
+		}
 	}
 
 	@Override
-	public void Remove(Character actor) {
-		// TODO Auto-generated method stub
-		actor.RemoveAbility(ability);
-	}
+	public void Remove(Character actor,Character caster) {
+		if(hasAbility){
+			actor.RemoveAbility(ability);
+			}
+		}
 
 	@Override
 	public boolean repeatApplication() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

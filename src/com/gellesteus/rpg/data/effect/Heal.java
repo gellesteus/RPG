@@ -3,22 +3,20 @@ package com.gellesteus.rpg.data.effect;
 import com.gellesteus.rpg.entity.Character;
 
 public class Heal implements Effect {
-	private Character caster;
 	private int amount;
 	
-	public Heal(Character caster,int amount){
-		this.caster=caster;
+	public Heal(int amount){
 		this.amount=amount;
 	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		// TODO Auto-generated method stub
 		caster.heal(actor,amount);
 	}
 
 	@Override
-	public void Remove(Character actor) {
+	public void Remove(Character actor,Character caster) {
 		// TODO Auto-generated method stub
 
 	}

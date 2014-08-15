@@ -43,6 +43,11 @@ public enum AttributeType {
 	PERCENT_DAMAGE_TAKEN,
 	PERCENT_DAMAGE_DEALT,
 	PERCENT_HEALING_TAKEN,
-	PERCENT_HEALING_GIVEN,
+	PERCENT_HEALING_GIVEN,;
+
+	public static AttributeType GetAttribute(Integer pop) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

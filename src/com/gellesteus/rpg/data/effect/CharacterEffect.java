@@ -9,6 +9,7 @@ public class CharacterEffect implements Update{
 	private int msSinceLastTick;
 	private int tickTime;
 	private Character target;
+	private Character caster;
 	
 	public CharacterEffect(Effect effect, float duration){
 		this.effect=effect;
@@ -21,12 +22,14 @@ public class CharacterEffect implements Update{
 		this.target=target;
 	}
 	
-	public CharacterEffect(CharacterEffect effect, Character target){
+	public CharacterEffect(CharacterEffect effect,float duration, Character target, Character caster){
 		this.target=target;
+		this.caster=caster;
+		this.durationRemaining=(int)(duration*1000);
 		this.effect=effect.effect;
 		this.durationRemaining=effect.durationRemaining;
 		this.tickTime=effect.tickTime;
-		this.effect.Apply(target);
+		this.effect.Apply(target,caster);
 	}
 	
 	public void update(int msPassed){
@@ -40,7 +43,7 @@ public class CharacterEffect implements Update{
 		
 		if(effect.repeatApplication()){
 			if(msSinceLastTick>=tickTime){
-				effect.Apply(target);
+				effect.Apply(target,caster);
 				msSinceLastTick-=tickTime;
 			}
 		}
@@ -51,6 +54,6 @@ public class CharacterEffect implements Update{
 	}
 	
 	private void remove(){
-		effect.Remove(target);
+		effect.Remove(target,caster);
 	}
 }

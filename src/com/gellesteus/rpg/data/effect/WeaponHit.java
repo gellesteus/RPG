@@ -3,21 +3,15 @@ package com.gellesteus.rpg.data.effect;
 import com.gellesteus.rpg.entity.Character;
 
 public class WeaponHit implements Effect {
-	private Character caster;
-	
-	public WeaponHit(Character caster){
-		this.caster=caster;
-	}
+	public WeaponHit(){	}
 	
 	@Override
-	public void Apply(Character actor) {
+	public void Apply(Character actor,Character caster) {
 		caster.weaponAttack(actor);
 	}
 
 	@Override
-	public void Remove(Character actor) {
-		// TODO Auto-generated method stub
-		
+	public void Remove(Character actor,Character caster) {		
 	}
 
 	@Override
